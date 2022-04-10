@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: whoami-po
+  template:
+    metadata:
+      labels:
+        name: whoami-po
+    spec:
+      containers:
+      - name: whoami-co
+        image: containous/whoami
+        resources:
+          limits:
+            cpu: 10m
+            memory: 10Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-svc
+spec:
+  ports:
+  - targetPort: 80
+    port: 80
+  selector:
+    name: whoami-po
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami-ingroute
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: PathPrefix(`/whoami`)
+      kind: Rule
+      services:
+        - name: whoami-svc
+          port: 80
