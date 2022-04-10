@@ -63,3 +63,8 @@ infra-config
 |-- __main__.py
 |-- requirements.txt
 ```
+
+
+# references
+
+- [Flux v2 Everything that you wanted to know but were afraid to ask (Stefan Prodan)](https://www.youtube.com/watch?v=nGLpUCPX8JE)
