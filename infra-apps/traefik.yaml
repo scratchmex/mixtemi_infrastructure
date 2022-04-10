@@ -8,4 +8,4 @@ spec:
   valuesContent: |-
     ports:
       web:
-        redirectTo: websecure  # redirect http to https
+        # redirectTo: websecure  # redirect http to https
