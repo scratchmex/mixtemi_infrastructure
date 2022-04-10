@@ -15,7 +15,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: empanada-release
-  namespace: flux-system
+  namespace: default
 spec:
   interval: 1m0s
   path: ./deploy
