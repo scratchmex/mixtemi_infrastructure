@@ -8,13 +8,3 @@ spec:
   interval: 1h
   url: https://charts.bitnami.com/bitnami
 
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: sealed-secrets-repo
-  namespace: sealed-secrets-ns
-spec:
-  interval: 1h
-  url: https://bitnami-labs.github.io/sealed-secrets
-

@@ -47,8 +47,7 @@ clusters
 
 ```
 infra-apps
-|-- <appname>.yaml    <-- includes: namespace, release, values
-|-- repos.yaml    <-- all repos/sources
+|-- <appname>.yaml    <-- includes: namespace, release, values, repos/sources
 |-- kustomization.yaml
 ```
 
