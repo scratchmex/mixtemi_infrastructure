@@ -5,10 +5,11 @@
 |-- clusters    <-- fluxcd definitions
 |-- infra-apps    <-- commons apps for cluster operation: traefik, service mesh, metrics
 |-- infra-config    <-- Pulumi config for: dns
+|-- scripts    <-- utils
 ```
 
 
-## apps
+# apps
 
 base resources definitions should point to `default` namespace to monitor leaked apps without proper patches
 
@@ -33,7 +34,7 @@ apps
 ```
 
 
-## clusters
+# clusters
 
 ```
 clusters
@@ -43,7 +44,7 @@ clusters
 ```
 
 
-## infra-apps
+# infra-apps
 
 ```
 infra-apps
@@ -52,7 +53,7 @@ infra-apps
 ```
 
 
-## infra-config
+# infra-config
 
 ```
 infra-config
@@ -61,6 +62,19 @@ infra-config
 |-- dns.py
 |-- __main__.py
 |-- requirements.txt
+```
+
+
+# scripts
+
+## creation of sealed secrets
+
+```console
+cat .env | scripts/create-secret.sh | scripts/seal-secret.sh
+```
+or
+```console
+echo "VAR1=VALUE1\n VAR2=VALUE2" | scripts/create-secret.sh | scripts/seal-secret.sh
 ```
 
 
