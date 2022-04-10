@@ -10,16 +10,25 @@
 
 ## apps
 
+base resources definitions should point to `default` namespace to monitor leaked apps without proper patches
+
 ```
 apps
 |-- base
-|   |-- <appname>.yaml    <-- includes: repo, namespace, release
-|   |-- kustomization.yaml
+|   |-- <appname>
+|   |   |-- resources.yaml    <-- includes: repo, release
+|   |   |-- kustomization.yaml
 |-- prod
-|   |-- <app-releasename>-values.yaml    <-- patch specific values
+|   |-- <appname>
+|       |-- values.yaml    <-- patch specific values
+|       |-- namespace.yaml    <-- specific namespace definition
+|       |-- kustomization.yaml
 |   |-- kustomization.yaml
 |-- dev
-|   |-- <app-releasename>-values.yaml    <-- patch specific values
+|   |-- <appname>
+|       |-- values.yaml    <-- patch specific values
+|       |-- namespace.yaml    <-- specific namespace definition
+|       |-- kustomization.yaml
 |   |-- kustomization.yaml
 ```
 
