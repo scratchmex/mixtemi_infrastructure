@@ -24,7 +24,7 @@ spec:
             sans:
             - "*.mixtemi.com"
     additionalArguments:
-    - "--certificatesresolvers.myresolver.acme.email=alo@ivgo.me"
+    - "--certificatesresolvers.le.acme.email=alo@ivgo.me"
     - "--certificatesresolvers.le.acme.storage=/data/acme.json"
     - "--certificatesresolvers.le.acme.dnschallenge=true"
     - "--certificatesresolvers.le.acme.dnschallenge.provider=cloudflare"
@@ -33,12 +33,17 @@ spec:
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
   name: traefik-acme-dns-cloudflare-secret
   namespace: kube-system
 spec:
   encryptedData:
-    CF_DNS_API_TOKEN: AgAJR2hLm8x6C+XSVBK/DgwrCDdlUZDZvVbPoN3sXahfHu4d6z4DfdMgxTPt4jlVZ2QDM7IeA5qcX0mk9Y7m5wrEkMK/pskBAA+NsWv4cJKGjtJ5GpPgI3w7xFIrgRADZYdd4qcAfYvuKwD3TSSownICRLrqqP840cPHGr2UBCOoEVMhmFm4W1tjJnf2Ka30NDZQK0UJJJiszpKz5pIz0MdxsvddET5K6Y2TV68FJmVhIK3rFvX8F6od1GmjXv3uBkos88QAqohHXguj4E6he7vZmhQpV0slBjmU8I6Wqs/yXT0ieYVQJ1D3xz9Hl7Qb8wzsROxA+alTlw5Yg5QoDZWEWfaHvz4uFBi/vda0ORcKa9qt+a5aP3hPxLaJlF+9HO3RULE6cysbK4O9PgZQG/gbhETarhDN8xJP30vo3GBXlXULSKqWFaBnbI8KQ5CDvHsmjrkF4kB9GFdYLBIwrAC1e7FH1XMef7/9yFlL04IutM5ATkkvEV/fI93vdGZHQd/MLbbHP3TWKnQkwM/c3RmXeGx80XsU/5MzRc6nVOKD05WWT0Uf0aQRCe7Y14zMFPJR7vZe1Mlp0h/QHUJWeNRq0djoaCvq32eCSsHj+Tp05OpGF5RU/9BnPauwTDproTp+YxEuhPzbegNOjueH9g8d5jMavedtA2xVmiu0qPLN7AD647ngrdv+QRVMf+eI8R/gGn/ZBh1ABMKK0pAwEKJD2pQdvIKjR+mUu4t5oUlvUD3/unAeckVe
+    CF_DNS_API_TOKEN: AgB7Mucm5PRftjO/k8K8PfDt0H7nRydgaO8cno/JVpcUfZoZy9LTxiHjmP0j+ySiEq/kTo459Orm2JeQuvGn8W/I4rYalEM/xTSjcTaNyxra2ZC0HS9gohz3Bpl+8iN3ID9lE5gQ4OuMzYaU9q/tFpoqxxX87I0e6WMHu2Qq5gMg+GWWx8xjRKF0n5hVjUwytloRWN5FAdLWHA2sbGbPfDKXP0f9zqLtawB6vVSOtwAFPZi54tMDJqtPEMrhF3JxRZv4CDcag9Qby5vdSBgx9Ivvr50I/RvSoFuddzNVt81i8ft0m5/0KFh/QILncD7daOg5EMUylbypDBZtDbHifJcAnt/gqICHjlYpsaYcaAPLWjIH/k3iDj7l83We5i6FBxZdrew4EuwmaFncI8uCPYfr5xNRW4YbD8UjH97m4StyEDRVstBa56mdVrxIniOwMOQw5YPfOSHL5rGULYexdFrBj2BxC1230/BXIL/w1Ie+kMYxAQRehOQhxHNoRN1QqC3Y/xWZl8ReKFz6cJFvpLRSn1U5igUu273Neh4fqSNimCTdsp2zFTUPu5I7iDi9ZlZFQcY8D6kNgZ8JgGKdkj1IkH9hUFo7YSxlLHeXbe/qDCPUPhnzACEvU1AfBM077N9ZHxZN03CepGs3tJUjYi2QBd1XijHyFYyQ2DuqID/zR0r+l0kwByIfQd7Bv71WDrqTL5+0PtZMrRJSW4n++pyVFVx8rAUtDimggl0LHsCnb8lT/K78PS4b
   template:
     metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
       name: traefik-acme-dns-cloudflare-secret
       namespace: kube-system
+
