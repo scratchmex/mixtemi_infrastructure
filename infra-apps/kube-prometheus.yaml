@@ -30,10 +30,15 @@ spec:
   install:
     crds: Create
     createNamespace: true
+    # ref: https://github.com/fluxcd/helm-controller/issues/142
+    remediation:
+      retries: 3
   interval: 1h
   releaseName: kube-prometheus-release
   targetNamespace: kube-prometheus-ns
   upgrade:
     crds: CreateReplace
+    remediation:
+      retries: 3
   # values:
 
