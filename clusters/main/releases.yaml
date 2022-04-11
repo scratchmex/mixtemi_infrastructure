@@ -40,7 +40,7 @@ spec:
   interval: 1m
   path:
     ./apps/prod
-  prune: false
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
