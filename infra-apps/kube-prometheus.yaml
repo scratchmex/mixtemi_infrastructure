@@ -31,7 +31,7 @@ spec:
     crds: Create
     createNamespace: true
   interval: 1h
-  releaseName: sealed-secrets-release
+  releaseName: kube-prometheus-release
   targetNamespace: kube-prometheus-ns
   upgrade:
     crds: CreateReplace
