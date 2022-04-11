@@ -17,12 +17,7 @@ spec:
         redirectTo: websecure  # redirect http to https
       websecure:
         tls:
-          enabled: true
           certResolver: le
-          domains:
-          - main: "mixtemi.com"
-            sans:
-            - "*.mixtemi.com"
     additionalArguments:
     - "--certificatesresolvers.le.acme.email=alo@ivgo.me"
     - "--certificatesresolvers.le.acme.storage=/data/acme.json"
