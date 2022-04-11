@@ -9,7 +9,7 @@ spec:
   valuesContent: |-
     envFrom:
     - secretRef:
-      name: traefik-acme-dns-cloudflare-secret
+        name: traefik-acme-dns-cloudflare-secret
     persistence:
       enabled: enabled
     ports:
