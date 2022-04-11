@@ -27,6 +27,8 @@ spec:
           limits:
             cpu: 10m
             memory: 10Mi
+        ports:
+        - containerPort: 80
 
 ---
 apiVersion: v1
