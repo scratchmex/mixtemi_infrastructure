@@ -5,4 +5,5 @@ resources:
 - traefik.yaml
 - whoami.yaml
 - sealed-secrets.yaml
-- kube-prometheus.yaml
+- prometheus-grafana.yaml
+- loki.yaml
