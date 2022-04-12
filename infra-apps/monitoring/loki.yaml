@@ -29,5 +29,7 @@ spec:
   targetNamespace: monitoring-ns
   upgrade:
     crds: CreateReplace
-  # values:
+  values:
+    loki:
+      isDefault: false
 
