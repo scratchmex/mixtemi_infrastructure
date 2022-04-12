@@ -18,6 +18,13 @@ spec:
       websecure:
         tls:
           certResolver: le
+          domains:
+          - main: "mixtemi.com"
+            sans:
+            - "*.mixtemi.com"
+            - "*.pluto.mixtemi.com"
+            - "*.dev.mixtemi.com"
+            - "*.prod.mixtemi.com"
     additionalArguments:
     - "--certificatesresolvers.le.acme.email=alo@ivgo.me"
     - "--certificatesresolvers.le.acme.storage=/data/acme.json"

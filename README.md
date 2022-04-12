@@ -68,6 +68,55 @@ infra-config
 |-- requirements.txt
 ```
 
+## dns naming scheme
+
+we name each server via a unique short name (e.g. pluto, ceres). Then, we add for each environment:
+
+- `dev`: Development
+- `test`: Testing
+- `stag`: Staging
+- `prod`: Production
+
+There could be special apps, mostly org related, like git, uptime, etc; that we can put in the first level. If the app is server related, then is behind the level of the server name, probaly we would have a wildcard.
+
+At the end we add the unique project name. If multiple deployments for the same app, we add the `#-` prefix. If we need different deployments for api, web, etc, we add it also as a suffix `-api`.
+
+The records of each app points to a server via `CNAME` record. Each server is a `A` record.
+
+examples:
+```
+pluto.domain.tld    A    123.4.5.6
+ceres.domain.tld    A    123.9.9.9
+
+git.domain.tld    CNAME    pluto.domain.tld.
+
+# monitor.pluto.domain.tld    CNAME    pluto.domain.tld.
+# traefik.ceres.domain.tld    CNAME    ceres.domain.tld.
+*.pluto.domain.tld    CNAME    pluto.domain.tld.
+*.ceres.domain.tld    CNAME    ceres.domain.tld.
+
+empanada.dev.domain.tld    CNAME    ceres.domain.tld.
+empanada-api.dev.domain.tld    CNAME    ceres.domain.tld.
+
+2-empanada.prod.domain.tld    CNAME    pluto.domain.tld.
+2-empanada-api.prod.domain.tld    CNAME    pluto.domain.tld.
+```
+
+This way our certificates only will need to be issued with this schema:
+
+```
+domain.tld
+*.domain.tld
+*.pluto.domain.tld
+*.dev.domain.tld
+*.prod.domain.tld
+```
+
+
+refs:
+- [A Proper Server Naming Scheme](https://mnx.io/blog/a-proper-server-naming-scheme/)
+- [Naming Schemes](https://namingschemes.com)
+
 
 # scripts
 
