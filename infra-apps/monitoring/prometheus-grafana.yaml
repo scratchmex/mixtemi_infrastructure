@@ -45,5 +45,5 @@ spec:
       kind: Rule
       services:
         - name: monitoring-ns-prom-graf-grafana
-          port: 3000
+          port: http-web
 
