@@ -31,3 +31,19 @@ spec:
     crds: CreateReplace
   # values:
 
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-ingroute
+  namespace: monitoring-ns
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: HostRegexp(`grafana.{server:[a-z]+}.{domain:[a-z0-9-_]+}.{tld:[a-z]+}`)
+      kind: Rule
+      services:
+        - name: monitoring-ns-prom-graf-grafana
+          port: 3000
+
