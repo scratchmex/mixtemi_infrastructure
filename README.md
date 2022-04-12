@@ -81,3 +81,5 @@ echo "VAR1=VALUE1\n VAR2=VALUE2" | scripts/create-secret.sh | scripts/seal-secre
 # references
 
 - [Flux v2 Everything that you wanted to know but were afraid to ask (Stefan Prodan)](https://www.youtube.com/watch?v=nGLpUCPX8JE)
+- [Manage your Kubernetes clusters with Flux2](https://medium.com/alterway/manage-your-kubernetes-clusters-with-flux2-82dd1cfe2a6a)
+- [flux2-kustomize-helm-example](https://github.com/fluxcd/flux2-kustomize-helm-example)
