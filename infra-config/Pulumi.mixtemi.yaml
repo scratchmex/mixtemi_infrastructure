@@ -1,0 +1,4 @@
+config:
+  cloudflare:apiToken:
+    secure: AAABAKW00W8VVjl3RMbvSqP1Nw2YT+r/pZTrdk9xgzFPct2bRi59gzKOGobBSld6GjVs97e7rIzEAl8w1N1swnhZFsAHlMCe
+  mixtemi:zone_id: 3e93f78963dd1e9309031b31dfd32a6a
