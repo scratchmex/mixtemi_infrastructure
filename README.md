@@ -79,7 +79,7 @@ we name each server via a unique short name (e.g. pluto, ceres). Then, we add fo
 
 There could be special apps, mostly org related, like git, uptime, etc; that we can put in the first level. If the app is server related, then is behind the level of the server name, probaly we would have a wildcard.
 
-At the end we add the unique project name. If multiple deployments for the same app, we add the `#-` prefix. If we need different deployments for api, web, etc, we add it also as a suffix `-api`.
+At the end we add the unique project name. If multiple deployments for the same app, we add the `-#` suffix. If we need different deployments for api, web, etc, we add it also as a suffix `-api`.
 
 The records of each app points to a server via `CNAME` record. Each server is a `A` record.
 
@@ -98,8 +98,8 @@ git.domain.tld    CNAME    pluto.domain.tld.
 empanada.dev.domain.tld    CNAME    ceres.domain.tld.
 empanada-api.dev.domain.tld    CNAME    ceres.domain.tld.
 
-2-empanada.prod.domain.tld    CNAME    pluto.domain.tld.
-2-empanada-api.prod.domain.tld    CNAME    pluto.domain.tld.
+empanada-2.prod.domain.tld    CNAME    pluto.domain.tld.
+empanada-2-api.prod.domain.tld    CNAME    pluto.domain.tld.
 ```
 
 This way our certificates only will need to be issued with this schema:
