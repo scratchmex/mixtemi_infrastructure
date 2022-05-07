@@ -26,6 +26,7 @@ dns_man.add_record("CNAME", "dev", "app.@")
 # - empanada
 dns_man.add_record("CNAME", "api.empanada.app", "app.@")
 dns_man.add_record("CNAME", "api.2-empanada.app", "app.@")
+dns_man.add_record("CNAME", "api.3-empanada.app", "app.@")
 dns_man.add_record("CNAME", "api.empanada.dev", "dev.@")
 
 # - servers
